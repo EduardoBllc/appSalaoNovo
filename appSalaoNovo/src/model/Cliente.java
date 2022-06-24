@@ -7,11 +7,20 @@ public class Cliente extends Pessoa {
 	private String cpf;
 	private String telefone;
 
+	/***
+	 * Sem telefone
+	 * @param nome
+	 */
 	public Cliente(String nome) {
 		super(nome);
 		super.tipo = tipo;
 	}
 
+	/***
+	 * Com telefone
+	 * @param nome
+	 * @param telefone
+	 */
 	public Cliente(String nome, String telefone) {
 		super(nome);
 		super.tipo = tipo;
