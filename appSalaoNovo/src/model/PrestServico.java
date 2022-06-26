@@ -47,6 +47,10 @@ public class PrestServico {
 	@Override
 	public String toString() {
 
-		return "\n" + this.pro + "\n" + this.serv + "\nValor: " + Utils.valorToString(this.valor);
+		return this.pro + "\n" + this.serv + "\nValor: " + Utils.valorToString(this.valor);
+	}
+	
+	public String listagem() {
+		return this.pro + "\n" + this.serv;
 	}
 }

@@ -10,9 +10,10 @@ public class Atendimento {
 	private Cliente cliente;
 
 	private List<PrestServico> pserv = new ArrayList<>();
-	private List<Venda> vendas = new ArrayList<>();
+	private List<Produto> prod = new ArrayList<>();
 
 	private double total = 0;
+	private String status;
 	
 	/***
 	 * Construtor para serviços
@@ -20,6 +21,7 @@ public class Atendimento {
 	 * @param pserv
 	 */
 	public Atendimento(Cliente cli, PrestServico pserv) {
+		this.status = "Atendimento em andamento";
 		this.cliente = cli;
 		this.pserv.add(pserv);
 		total += pserv.getValor();
@@ -30,10 +32,10 @@ public class Atendimento {
 	 * @param cli
 	 * @param vend
 	 */
-	public Atendimento(Cliente cli, Venda vend) {
+	public Atendimento(Cliente cli, Produto prod) {
 		this.cliente = cli;
-		this.vendas.add(vend);
-		total += vend.getValor();
+		this.prod.add(prod);
+		total += prod.getValor();
 	}
 
 
@@ -53,30 +55,36 @@ public class Atendimento {
 		return total;
 	}
 
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	public void addPserv(PrestServico pserv) {
 		this.pserv.add(pserv);
 		total += pserv.getValor();
 	}
 
-	public void addVenda(Venda vend) {
-		this.vendas.add(vend);
-		total += vend.getValor();
+	public void addVenda(Produto prod) {
+		this.prod.add(prod);
+		total += prod.getValor();
 	}
 
 	@Override
 	public String toString() {
 
-		String txt = "------------------------------------";
+		String txt = "---------------- Atendimento ----------------\n";
 		for (PrestServico p : pserv) {
 			txt = txt + p.toString() + "\n";
 		}
 
-		txt = txt + "\n";
-
-		for (Venda v : vendas) {
+		for (Produto v : prod) {
 			txt = txt + v.toString() + "\n";
 		}
-		txt = txt + "\nTotal: " + Utils.valorToString(this.total) + "\n------------------------------------";
+		txt = txt + "Total: " + Utils.valorToString(this.total) + "\n--------------------------------------------";
 
 		return txt;
 	}

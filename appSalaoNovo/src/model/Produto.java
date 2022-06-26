@@ -1,10 +1,15 @@
 package model;
 
-public abstract class Produto {
+public class Produto {
 	public String tipo = "Produto";
 	private String nome;
 	private double valor;
 
+	/***
+	 * Consturo produto
+	 * @param nome
+	 * @param valor
+	 */
 	public Produto(String nome, double valor) {
 		this.nome = nome;
 		this.valor = valor;

@@ -12,4 +12,9 @@ public class Servico extends Produto {
 	public Servico(String nome, double valor) {
 		super(nome, valor);
 	}
+	
+	@Override
+	public String toString() {
+		return "Nome do " + tipo + ": " + this.getNome();
+	}
 }
