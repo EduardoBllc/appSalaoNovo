@@ -1,5 +1,7 @@
 package model;
 
+import helper.Utils;
+
 public class Produto {
 	public String tipo = "Produto";
 	private String nome;
@@ -38,7 +40,7 @@ public class Produto {
 	@Override
 	public String toString() {
 		if (valor != 0) {
-			return "Nome do " + tipo + ": " + nome + "\nValor: " + valor;
+			return "Nome do " + tipo + ": " + nome + "\nValor: " + Utils.valorToString(valor);
 		} else {
 			return "Nome do " + tipo + ": " + nome;
 		}

@@ -27,8 +27,25 @@ public class BaseDados {
 		serv.add(new Servico("Cabelo colorido"));
 		serv.add(new Servico("Micropigmentação"));
 		serv.add(new Servico("Escova",60.0));
-
 		
+		pro.get(0).addListaServ(serv.get(1));
+		pro.get(0).addListaServ(serv.get(2));
+		pro.get(0).addListaServ(serv.get(3));
+		pro.get(0).addListaServ(serv.get(5));
+		
+		pro.get(1).addListaServ(serv.get(3));
+		pro.get(1).addListaServ(serv.get(6));
+		
+		pro.get(2).addListaServ(serv.get(0));
+		pro.get(2).addListaServ(serv.get(4));
+		pro.get(2).addListaServ(serv.get(7));
+		
+		pro.get(3).addListaServ(serv.get(0));
+		pro.get(3).addListaServ(serv.get(4));
+		pro.get(3).addListaServ(serv.get(7));
+		
+		pro.get(4).addListaServ(serv.get(1));
+
 	}
 	
 	public List<Profissional> getPro() {

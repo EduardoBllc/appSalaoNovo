@@ -76,15 +76,18 @@ public class Atendimento {
 	@Override
 	public String toString() {
 
-		String txt = "---------------- Atendimento ----------------\n";
+		String txt = "---------------- Atendimento ----------------"
+				+ "\n" + cliente + "\n\n";
+		
 		for (PrestServico p : pserv) {
-			txt = txt + p.toString() + "\n";
+			txt = txt  + p.toString() + "\n\n";
 		}
-
+		
+		
 		for (Produto v : prod) {
 			txt = txt + v.toString() + "\n";
 		}
-		txt = txt + "Total: " + Utils.valorToString(this.total) + "\n--------------------------------------------";
+		txt = txt + "\nTotal: " + Utils.valorToString(this.total) + "\n--------------------------------------------";
 
 		return txt;
 	}
@@ -94,6 +97,6 @@ public class Atendimento {
 	 * @return O cliente e o subtotal(valor atual do atendimento antes de ser fechado)
 	 */
 	public String listar() {
-		return this.getCliente().toString() + "\nSubtotal: " + total;
+		return this.getCliente().toString() + "\nSubtotal: " + this.total;
 	}
 }
